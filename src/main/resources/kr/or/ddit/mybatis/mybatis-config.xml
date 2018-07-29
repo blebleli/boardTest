@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+	<typeAliases>
+		<typeAlias alias="stdVo" type="board.student.model.StudentVo" />
+		<typeAlias alias="boardVo" type="board.createBoard.model.BoardVo" />
+		<typeAlias alias="writeVo" type="board.write.model.WriteVo" />
+		<typeAlias alias="cmtVo" type="board.comment.model.CommentVo" />
+		<typeAlias alias="fileVo" type="board.boardFile.model.BoardFileVo" />
+	</typeAliases>
+	
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="oracle.jdbc.driver.OracleDriver" />
+				<property name="url" value="jdbc:oracle:thin:@192.168.56.1:1521:xe" />
+				<property name="username" value="pc06" />
+				<property name="password" value="java" />
+			</dataSource>
+		</environment>
+	</environments>
+
+	<mappers>
+		<mapper resource="kr/or/ddit/mybatis/mapper/student.xml"/>
+		<mapper resource="kr/or/ddit/mybatis/mapper/board.xml"/>
+		<mapper resource="kr/or/ddit/mybatis/mapper/write.xml"/>
+		<mapper resource="kr/or/ddit/mybatis/mapper/comment.xml"/>
+		<mapper resource="kr/or/ddit/mybatis/mapper/boardFile.xml"/>
+	</mappers>
+	
+</configuration>
